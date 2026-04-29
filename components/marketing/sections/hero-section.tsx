@@ -1,14 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { MotionSection } from "@/components/marketing/motion-section"
+import {
+  MotionSection,
+  Reveal,
+  StaggerGroup,
+} from "@/components/marketing/motion-section"
 import { COMPANY_NAME, HERO_IMAGE_PATH, hero } from "@/lib/site-content"
 
 export function HeroSection() {
   return (
     <MotionSection
       id="top"
-      className="relative flex min-h-[min(85svh,920px)] scroll-mt-[5.5rem] items-end overflow-hidden bg-ng-charcoal pb-16 pt-28 sm:pb-24 sm:pt-32"
+      className="relative flex min-h-[min(85svh,920px)] scroll-mt-[5.5rem] items-end overflow-hidden bg-ng-charcoal pt-28 pb-16 sm:pt-32 sm:pb-24"
     >
       <div className="absolute inset-0">
         <Image
@@ -31,48 +35,63 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex max-w-xl gap-4 sm:max-w-2xl lg:max-w-3xl lg:gap-5">
-          <div className="w-1 shrink-0 self-stretch bg-ng-red" aria-hidden />
+        <StaggerGroup className="flex max-w-xl gap-4 sm:max-w-2xl lg:max-w-3xl lg:gap-5">
+          <Reveal
+            direction="down"
+            delay={0.08}
+            className="w-1 shrink-0 self-stretch bg-ng-red"
+            aria-hidden
+          />
 
           <div className="min-w-0 flex-1 text-left">
-            <div className="mb-5">
-              <span className="inline-block rounded-md bg-ng-red px-3 py-2 text-[0.625rem] font-bold uppercase leading-tight tracking-wide text-white sm:text-xs sm:tracking-wider">
+            <Reveal direction="up" delay={0.08} className="mb-5">
+              <span className="inline-block rounded-md bg-ng-red px-3 py-2 text-[0.625rem] leading-tight font-bold tracking-wide text-white uppercase sm:text-xs sm:tracking-wider">
                 {COMPANY_NAME}
               </span>
-            </div>
+            </Reveal>
 
-            <h1 className="text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl sm:leading-[1.12] lg:text-6xl lg:tracking-[-0.02em] xl:text-[4.5rem] xl:leading-[1.08] xl:tracking-[-0.04em]">
-              <span className="block text-ng-cream">{hero.headlineLineWhite}</span>
-              {hero.headlineLinesRed.map((line) => (
-                <span key={line} className="block text-ng-red">
-                  {line}
+            <Reveal direction="up" delay={0.16}>
+              <h1 className="text-4xl leading-[1.12] font-bold tracking-tight sm:text-5xl sm:leading-[1.12] lg:text-6xl lg:tracking-[-0.02em] xl:text-[4.5rem] xl:leading-[1.08] xl:tracking-[-0.04em]">
+                <span className="block text-ng-cream">
+                  {hero.headlineLineWhite}
                 </span>
-              ))}
-            </h1>
+                {hero.headlineLinesRed.map((line) => (
+                  <span key={line} className="block text-ng-red">
+                    {line}
+                  </span>
+                ))}
+              </h1>
+            </Reveal>
 
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ng-cream sm:text-lg">
-              {hero.subtext}
-            </p>
-
-            <nav
-              className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-base font-medium text-ng-cream"
-              aria-label="Hero actions"
+            <Reveal
+              direction="up"
+              delay={0.24}
+              className="mt-6 max-w-2xl text-base leading-relaxed text-ng-cream sm:text-lg"
             >
-              <Link
-                href="#contact"
-                className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-red hover:text-ng-cream"
+              {hero.subtext}
+            </Reveal>
+
+            <Reveal direction="up" delay={0.32}>
+              <nav
+                className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-base font-medium text-ng-cream"
+                aria-label="Hero actions"
               >
-                {hero.ctaPrimary}
-              </Link>
-              <Link
-                href="#services"
-                className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-gold hover:text-ng-cream"
-              >
-                {hero.ctaSecondary}
-              </Link>
-            </nav>
+                <Link
+                  href="#contact"
+                  className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-red hover:text-ng-cream"
+                >
+                  {hero.ctaPrimary}
+                </Link>
+                <Link
+                  href="#services"
+                  className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-gold hover:text-ng-cream"
+                >
+                  {hero.ctaSecondary}
+                </Link>
+              </nav>
+            </Reveal>
           </div>
-        </div>
+        </StaggerGroup>
       </div>
     </MotionSection>
   )

@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "framer-motion"
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
@@ -28,18 +29,34 @@ export function SectionBackdrop({
   overlayClassName?: string
 }) {
   return (
-    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden>
-      <Image
-        src={src}
-        alt=""
-        fill
-        sizes="100vw"
+    <div
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      aria-hidden
+    >
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0, scale: 1.08 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes="100vw"
+          className={cn(
+            "object-cover opacity-[0.2] saturate-[0.75] sm:opacity-[0.24]",
+            imageClassName
+          )}
+        />
+      </motion.div>
+      <div
         className={cn(
-          "object-cover opacity-[0.2] saturate-[0.75] sm:opacity-[0.24]",
-          imageClassName
+          "absolute inset-0",
+          overlayClassName ?? toneOverlay[tone]
         )}
       />
-      <div className={cn("absolute inset-0", overlayClassName ?? toneOverlay[tone])} />
     </div>
   )
 }

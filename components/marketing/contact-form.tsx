@@ -2,7 +2,14 @@
 
 import { useActionState } from "react"
 
-import { submitContactAction, type ContactFormState } from "@/app/actions/contact"
+import {
+  submitContactAction,
+  type ContactFormState,
+} from "@/app/actions/contact"
+import {
+  StaggerBlock,
+  StaggerGroup,
+} from "@/components/marketing/motion-section"
 import { Button } from "@/components/ui/button"
 import { contact, serviceInterestOptions } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
@@ -13,16 +20,23 @@ const fieldClass =
   "w-full rounded-none border border-ng-concrete/35 bg-ng-white/85 px-4 py-3 text-sm text-ng-black placeholder:text-ng-black/45 outline-none transition-colors focus-visible:border-ng-red focus-visible:ring-2 focus-visible:ring-ng-red/35 dark:bg-ng-black/50 dark:text-ng-cream dark:placeholder:text-ng-concrete/70"
 
 export function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitContactAction, initialState)
+  const [state, formAction, isPending] = useActionState(
+    submitContactAction,
+    initialState
+  )
 
   if (state.ok) {
     return (
       <div
-        className="border border-ng-concrete/25 border-t-2 border-t-ng-gold bg-ng-white/85 p-8 text-center shadow-sm dark:bg-ng-charcoal/80 dark:shadow-none"
+        className="border border-t-2 border-ng-concrete/25 border-t-ng-gold bg-ng-white/85 p-8 text-center shadow-sm dark:bg-ng-charcoal/80 dark:shadow-none"
         role="status"
       >
-        <p className="text-lg font-semibold text-ng-black dark:text-ng-cream">{state.message}</p>
-        <p className="mt-2 text-sm text-ng-black/60 dark:text-ng-concrete">We appreciate your interest in NextGen Apex.</p>
+        <p className="text-lg font-semibold text-ng-black dark:text-ng-cream">
+          {state.message}
+        </p>
+        <p className="mt-2 text-sm text-ng-black/60 dark:text-ng-concrete">
+          We appreciate your interest in NextGen Apex.
+        </p>
       </div>
     )
   }
@@ -35,9 +49,12 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="sm:col-span-1">
-          <label htmlFor="fullName" className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">
+      <StaggerGroup className="grid gap-5 sm:grid-cols-2">
+        <StaggerBlock className="sm:col-span-1">
+          <label
+            htmlFor="fullName"
+            className="mb-2 block text-xs font-bold tracking-[0.1em] text-ng-gold uppercase"
+          >
             Full name
           </label>
           <input
@@ -46,19 +63,27 @@ export function ContactForm() {
             type="text"
             autoComplete="name"
             required
-            className={cn(fieldClass, state.errors?.fullName && "border-ng-red")}
+            className={cn(
+              fieldClass,
+              state.errors?.fullName && "border-ng-red"
+            )}
             aria-invalid={Boolean(state.errors?.fullName)}
-            aria-describedby={state.errors?.fullName ? "fullName-error" : undefined}
+            aria-describedby={
+              state.errors?.fullName ? "fullName-error" : undefined
+            }
           />
           {state.errors?.fullName ? (
             <p id="fullName-error" className="mt-1.5 text-xs text-ng-red">
               {state.errors.fullName}
             </p>
           ) : null}
-        </div>
+        </StaggerBlock>
 
-        <div className="sm:col-span-1">
-          <label htmlFor="phone" className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">
+        <StaggerBlock className="sm:col-span-1">
+          <label
+            htmlFor="phone"
+            className="mb-2 block text-xs font-bold tracking-[0.1em] text-ng-gold uppercase"
+          >
             Phone number
           </label>
           <input
@@ -76,90 +101,120 @@ export function ContactForm() {
               {state.errors.phone}
             </p>
           ) : null}
-        </div>
-      </div>
+        </StaggerBlock>
+      </StaggerGroup>
 
-      <div>
-        <label htmlFor="email" className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">
-          Email address
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          className={cn(fieldClass, state.errors?.email && "border-ng-red")}
-          aria-invalid={Boolean(state.errors?.email)}
-          aria-describedby={state.errors?.email ? "email-error" : undefined}
-        />
-        {state.errors?.email ? (
-          <p id="email-error" className="mt-1.5 text-xs text-ng-red">
-            {state.errors.email}
-          </p>
-        ) : null}
-      </div>
+      <StaggerGroup className="space-y-5">
+        <StaggerBlock>
+          <label
+            htmlFor="email"
+            className="mb-2 block text-xs font-bold tracking-[0.1em] text-ng-gold uppercase"
+          >
+            Email address
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            className={cn(fieldClass, state.errors?.email && "border-ng-red")}
+            aria-invalid={Boolean(state.errors?.email)}
+            aria-describedby={state.errors?.email ? "email-error" : undefined}
+          />
+          {state.errors?.email ? (
+            <p id="email-error" className="mt-1.5 text-xs text-ng-red">
+              {state.errors.email}
+            </p>
+          ) : null}
+        </StaggerBlock>
 
-      <div>
-        <label
-          htmlFor="serviceInterest"
-          className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-ng-gold"
-        >
-          Service interested in
-        </label>
-        <select
-          id="serviceInterest"
-          name="serviceInterest"
-          required
-          defaultValue=""
-          className={cn(fieldClass, state.errors?.serviceInterest && "border-ng-red")}
-          aria-invalid={Boolean(state.errors?.serviceInterest)}
-          aria-describedby={state.errors?.serviceInterest ? "serviceInterest-error" : undefined}
-        >
-          <option value="" disabled>
-            Select a service
-          </option>
-          {serviceInterestOptions.map((opt) => (
-            <option key={opt} value={opt} className="bg-ng-white text-ng-black dark:bg-ng-charcoal dark:text-ng-cream">
-              {opt}
+        <StaggerBlock>
+          <label
+            htmlFor="serviceInterest"
+            className="mb-2 block text-xs font-bold tracking-[0.1em] text-ng-gold uppercase"
+          >
+            Service interested in
+          </label>
+          <select
+            id="serviceInterest"
+            name="serviceInterest"
+            required
+            defaultValue=""
+            className={cn(
+              fieldClass,
+              state.errors?.serviceInterest && "border-ng-red"
+            )}
+            aria-invalid={Boolean(state.errors?.serviceInterest)}
+            aria-describedby={
+              state.errors?.serviceInterest
+                ? "serviceInterest-error"
+                : undefined
+            }
+          >
+            <option value="" disabled>
+              Select a service
             </option>
-          ))}
-        </select>
-        {state.errors?.serviceInterest ? (
-          <p id="serviceInterest-error" className="mt-1.5 text-xs text-ng-red">
-            {state.errors.serviceInterest}
-          </p>
-        ) : null}
-      </div>
+            {serviceInterestOptions.map((opt) => (
+              <option
+                key={opt}
+                value={opt}
+                className="bg-ng-white text-ng-black dark:bg-ng-charcoal dark:text-ng-cream"
+              >
+                {opt}
+              </option>
+            ))}
+          </select>
+          {state.errors?.serviceInterest ? (
+            <p
+              id="serviceInterest-error"
+              className="mt-1.5 text-xs text-ng-red"
+            >
+              {state.errors.serviceInterest}
+            </p>
+          ) : null}
+        </StaggerBlock>
 
-      <div>
-        <label htmlFor="message" className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={5}
-          required
-          className={cn(fieldClass, "min-h-32 resize-y", state.errors?.message && "border-ng-red")}
-          aria-invalid={Boolean(state.errors?.message)}
-          aria-describedby={state.errors?.message ? "message-error" : undefined}
-        />
-        {state.errors?.message ? (
-          <p id="message-error" className="mt-1.5 text-xs text-ng-red">
-            {state.errors.message}
-          </p>
-        ) : null}
-      </div>
+        <StaggerBlock>
+          <label
+            htmlFor="message"
+            className="mb-2 block text-xs font-bold tracking-[0.1em] text-ng-gold uppercase"
+          >
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            required
+            className={cn(
+              fieldClass,
+              "min-h-32 resize-y",
+              state.errors?.message && "border-ng-red"
+            )}
+            aria-invalid={Boolean(state.errors?.message)}
+            aria-describedby={
+              state.errors?.message ? "message-error" : undefined
+            }
+          />
+          {state.errors?.message ? (
+            <p id="message-error" className="mt-1.5 text-xs text-ng-red">
+              {state.errors.message}
+            </p>
+          ) : null}
+        </StaggerBlock>
 
-      <Button
-        type="submit"
-        variant="heroPrimary"
-        disabled={isPending}
-        className="h-12 w-full max-w-xs font-semibold sm:w-auto"
-      >
-        {isPending ? "Sending…" : contact.formCta}
-      </Button>
+        <StaggerBlock>
+          <Button
+            type="submit"
+            variant="heroPrimary"
+            disabled={isPending}
+            className="h-12 w-full max-w-xs font-semibold sm:w-auto"
+          >
+            {isPending ? "Sending…" : contact.formCta}
+          </Button>
+        </StaggerBlock>
+      </StaggerGroup>
     </form>
   )
 }
