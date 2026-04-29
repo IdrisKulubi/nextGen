@@ -6,6 +6,7 @@ import { List, X } from "@phosphor-icons/react"
 import { Dialog } from "radix-ui"
 
 import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/theme/mode-toggle"
 import { navLinks } from "@/lib/site-content"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
@@ -51,6 +52,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:gap-3">
+          {/* <ModeToggle className="text-ng-cream hover:bg-white/10 hover:text-ng-cream focus-visible:ring-ng-red/40" /> */}
           <div className="flex items-center gap-2 md:hidden">
             <Dialog.Root open={open} onOpenChange={setOpen}>
               <Dialog.Trigger asChild>

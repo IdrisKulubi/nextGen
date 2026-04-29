@@ -19,9 +19,14 @@ export function ServicesSection() {
   return (
     <MotionSection
       id="services"
-      className="relative scroll-mt-24 overflow-hidden bg-ng-gold/15 py-20 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden bg-[#f5f3ef]/40 py-20 sm:py-28"
     >
-      <SectionBackdrop src={sectionBackdropImages.services} tone="warm" />
+      <SectionBackdrop
+        src={sectionBackdropImages.services}
+        tone="warm"
+        imageClassName="object-cover object-center opacity-[0.42] saturate-[0.7] sm:opacity-[0.5]"
+        overlayClassName="bg-gradient-to-b from-[#f5f3ef]/58 via-[#f5f3ef]/48 to-[#ebe6dd]/62"
+      />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">What we do</p>

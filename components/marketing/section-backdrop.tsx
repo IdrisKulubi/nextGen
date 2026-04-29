@@ -19,10 +19,13 @@ export function SectionBackdrop({
   src,
   tone,
   imageClassName,
+  overlayClassName,
 }: {
   src: string
   tone: SectionBackdropTone
   imageClassName?: string
+  /** When set, replaces the default tone overlay (use for section-specific balance). */
+  overlayClassName?: string
 }) {
   return (
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden>
@@ -36,7 +39,7 @@ export function SectionBackdrop({
           imageClassName
         )}
       />
-      <div className={cn("absolute inset-0", toneOverlay[tone])} />
+      <div className={cn("absolute inset-0", overlayClassName ?? toneOverlay[tone])} />
     </div>
   )
 }

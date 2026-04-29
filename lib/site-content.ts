@@ -13,7 +13,7 @@ export const sectionBackdropImages = {
   about:
     "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=2000&q=75",
   services:
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=75",
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2400&q=80",
   vision:
     "https://images.unsplash.com/photo-1487958449943-242fe8af4d04?auto=format&fit=crop&w=2000&q=75",
   whyChooseUs:

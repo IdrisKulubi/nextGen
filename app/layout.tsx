@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -34,7 +35,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "dark antialiased",
+        "antialiased",
         fontMono.variable,
         "font-sans",
         inter.variable,
@@ -42,8 +43,14 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-svh bg-background text-foreground">
-        <ThemeProvider forcedTheme="dark" enableSystem={false} attribute="class">
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
