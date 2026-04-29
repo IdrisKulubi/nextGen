@@ -10,7 +10,8 @@ import {
 } from "@phosphor-icons/react"
 
 import { MotionSection } from "@/components/marketing/motion-section"
-import { services } from "@/lib/site-content"
+import { SectionBackdrop } from "@/components/marketing/section-backdrop"
+import { sectionBackdropImages, services } from "@/lib/site-content"
 
 const icons = [HardHat, Buildings, CompassTool, ClipboardText, Truck, Storefront] as const
 
@@ -18,9 +19,10 @@ export function ServicesSection() {
   return (
     <MotionSection
       id="services"
-      className="scroll-mt-24 bg-ng-gold/15 py-20 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden bg-ng-gold/15 py-20 sm:py-28"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionBackdrop src={sectionBackdropImages.services} tone="warm" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">What we do</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ng-black sm:text-4xl lg:tracking-[-0.02em]">

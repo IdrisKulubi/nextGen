@@ -8,11 +8,28 @@ export const HERO_IMAGE_PATH =
   process.env.NEXT_PUBLIC_HERO_IMAGE?.trim() ||
   "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2400&q=80"
 
+/** Faint full-bleed backgrounds for sections (construction / infrastructure themed). */
+export const sectionBackdropImages = {
+  about:
+    "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=2000&q=75",
+  services:
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=75",
+  vision:
+    "https://images.unsplash.com/photo-1487958449943-242fe8af4d04?auto=format&fit=crop&w=2000&q=75",
+  whyChooseUs:
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=75",
+  contact:
+    "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=2000&q=75",
+} as const
+
 export const COMPANY_NAME = "NextGen Apex Global Masters Ltd"
 export const COMPANY_NAME_SHORT = "NextGen Apex"
 
 export const hero = {
   headline: "Building the Future with Precision, Integrity & Innovation",
+  /** Reference layout: first line white, following lines red */
+  headlineLineWhite: "Building the Future",
+  headlineLinesRed: ["with Precision,", "Integrity & Innovation"] as const,
   subtext:
     "NextGen Apex Global Masters Ltd delivers integrated construction, real estate, logistics, and supply solutions for modern infrastructure and property development.",
   ctaPrimary: "Request a Quote",

@@ -1,11 +1,16 @@
 import { MotionSection } from "@/components/marketing/motion-section"
+import { SectionBackdrop } from "@/components/marketing/section-backdrop"
 import { ContactForm } from "@/components/marketing/contact-form"
-import { contact } from "@/lib/site-content"
+import { contact, sectionBackdropImages } from "@/lib/site-content"
 
 export function ContactSection() {
   return (
-    <MotionSection id="contact" className="scroll-mt-24 bg-ng-black py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <MotionSection
+      id="contact"
+      className="relative scroll-mt-24 overflow-hidden bg-ng-black py-20 sm:py-28"
+    >
+      <SectionBackdrop src={sectionBackdropImages.contact} tone="dark" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">Contact</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ng-cream sm:text-4xl lg:tracking-[-0.02em]">

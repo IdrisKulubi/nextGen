@@ -1,13 +1,15 @@
 import { MotionSection } from "@/components/marketing/motion-section"
-import { about } from "@/lib/site-content"
+import { SectionBackdrop } from "@/components/marketing/section-backdrop"
+import { about, sectionBackdropImages } from "@/lib/site-content"
 
 export function AboutSection() {
   return (
     <MotionSection
       id="about"
-      className="scroll-mt-24 border-t border-white/5 bg-ng-black py-20 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-ng-black py-20 sm:py-28"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionBackdrop src={sectionBackdropImages.about} tone="dark" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">About us</p>

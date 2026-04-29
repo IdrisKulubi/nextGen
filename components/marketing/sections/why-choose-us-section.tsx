@@ -3,7 +3,8 @@
 import { CirclesThree, Sparkle, Stack } from "@phosphor-icons/react"
 
 import { MotionSection } from "@/components/marketing/motion-section"
-import { whyChooseUs } from "@/lib/site-content"
+import { SectionBackdrop } from "@/components/marketing/section-backdrop"
+import { sectionBackdropImages, whyChooseUs } from "@/lib/site-content"
 
 const icons = [CirclesThree, Sparkle, Stack] as const
 
@@ -11,9 +12,10 @@ export function WhyChooseUsSection() {
   return (
     <MotionSection
       id="why-choose-us"
-      className="scroll-mt-24 border-t border-white/5 bg-ng-charcoal py-20 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-ng-charcoal py-20 sm:py-28"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionBackdrop src={sectionBackdropImages.whyChooseUs} tone="charcoal" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">Why NextGen</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ng-cream sm:text-4xl lg:tracking-[-0.02em]">
