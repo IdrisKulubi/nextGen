@@ -5,17 +5,19 @@ import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes"
 
 function ThemeProvider({
   children,
+  forcedTheme,
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}
       disableTransitionOnChange
+      forcedTheme={forcedTheme}
       {...props}
     >
-      <ThemeHotkey />
+      {forcedTheme ? null : <ThemeHotkey />}
       {children}
     </NextThemesProvider>
   )
