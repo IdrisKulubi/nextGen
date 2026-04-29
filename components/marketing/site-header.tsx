@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-white/10 bg-ng-surface/90 backdrop-blur-md supports-backdrop-filter:bg-ng-surface/80"
+        "sticky top-0 z-50 border-b border-ng-concrete/20 bg-ng-white/92 backdrop-blur-md supports-backdrop-filter:bg-ng-white/82 dark:border-white/10 dark:bg-ng-surface/90 dark:supports-backdrop-filter:bg-ng-surface/80"
       )}
     >
       <div className="flex h-[4.25rem] w-full items-center justify-between gap-3 px-3 sm:h-[4.75rem] sm:gap-4 sm:px-5 lg:px-8">
@@ -44,7 +44,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ng-cream/85 transition-colors hover:text-ng-red"
+              className="text-sm font-medium text-ng-black/75 transition-colors hover:text-ng-red dark:text-ng-cream/85"
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:gap-3">
-          {/* <ModeToggle className="text-ng-cream hover:bg-white/10 hover:text-ng-cream focus-visible:ring-ng-red/40" /> */}
+          <ModeToggle className="text-ng-black hover:bg-ng-black/5 hover:text-ng-red focus-visible:ring-ng-red/40 dark:text-ng-cream dark:hover:bg-white/10 dark:hover:text-ng-cream" />
           <div className="flex items-center gap-2 md:hidden">
             <Dialog.Root open={open} onOpenChange={setOpen}>
               <Dialog.Trigger asChild>
@@ -60,7 +60,7 @@ export function SiteHeader() {
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="text-ng-cream hover:bg-white/10"
+                  className="text-ng-black hover:bg-ng-black/5 dark:text-ng-cream dark:hover:bg-white/10"
                   aria-label="Open menu"
                 >
                   <List className="size-6" weight="bold" />
@@ -69,19 +69,19 @@ export function SiteHeader() {
               <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 z-50 bg-black/70 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
                 <Dialog.Content
-                  className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col border-l border-white/10 bg-ng-charcoal p-6 shadow-2xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right duration-200"
+                  className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col border-l border-ng-concrete/25 bg-ng-white p-6 shadow-2xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right dark:border-white/10 dark:bg-ng-charcoal duration-200"
                 >
                   <Dialog.Description className="sr-only">
                     Main site sections and contact.
                   </Dialog.Description>
                   <div className="mb-8 flex items-center justify-between">
-                    <Dialog.Title className="text-lg font-bold text-ng-cream">Menu</Dialog.Title>
+                    <Dialog.Title className="text-lg font-bold text-ng-black dark:text-ng-cream">Menu</Dialog.Title>
                     <Dialog.Close asChild>
                       <Button
                         type="button"
                         variant="ghost"
                         size="icon-sm"
-                        className="text-ng-cream hover:bg-white/10"
+                        className="text-ng-black hover:bg-ng-black/5 dark:text-ng-cream dark:hover:bg-white/10"
                         aria-label="Close menu"
                       >
                         <X className="size-5" weight="bold" />
@@ -93,14 +93,14 @@ export function SiteHeader() {
                       <Dialog.Close asChild key={link.href}>
                         <Link
                           href={link.href}
-                          className="px-3 py-3 text-base font-medium text-ng-cream/90 transition-colors hover:bg-ng-red/10 hover:text-ng-red"
+                          className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-red/10 hover:text-ng-red dark:text-ng-cream/90"
                         >
                           {link.label}
                         </Link>
                       </Dialog.Close>
                     ))}
                   </nav>
-                  <div className="mt-6 border-t border-white/10 pt-6">
+                  <div className="mt-6 border-t border-ng-concrete/25 pt-6 dark:border-white/10">
                     <Dialog.Close asChild>
                       <Button asChild variant="heroPrimary" className="w-full font-semibold">
                         <Link href="#contact">Request a Quote</Link>

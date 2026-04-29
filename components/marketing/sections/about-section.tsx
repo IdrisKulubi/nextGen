@@ -1,37 +1,90 @@
 import { MotionSection } from "@/components/marketing/motion-section"
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
 import { about, sectionBackdropImages } from "@/lib/site-content"
+import { cn } from "@/lib/utils"
 
 export function AboutSection() {
   return (
     <MotionSection
       id="about"
-      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-ng-black py-20 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden border-t border-ng-concrete/15 bg-[#f7f4ee] py-20 dark:border-white/5 dark:bg-ng-black sm:py-28"
     >
       <SectionBackdrop src={sectionBackdropImages.about} tone="dark" />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.1em] text-ng-gold">About us</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ng-cream sm:text-4xl lg:text-5xl lg:tracking-[-0.02em]">
-              {about.title}
-            </h2>
-            <div className="mt-5 h-14 w-1 bg-ng-red" aria-hidden />
-          </div>
-          <div className="space-y-6 border border-ng-concrete/25 border-t-2 border-t-ng-gold bg-ng-charcoal/80 p-8 lg:p-10">
-            <p className="text-base leading-relaxed text-ng-cream/85 sm:text-lg">{about.body}</p>
-            <div>
-              <p className="text-sm font-semibold text-ng-gold">{about.focusTitle}</p>
-              <ul className="mt-3 space-y-2 text-ng-cream/90">
-                {about.focus.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm sm:text-base">
-                    <span className="size-1.5 shrink-0 bg-ng-red" aria-hidden />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10 lg:gap-y-14 xl:gap-x-14">
+          {/* Left: label + headline unified with vertical rule */}
+          <header className="flex gap-5 sm:gap-6 lg:col-span-5 lg:flex-col lg:justify-center">
+            <div
+              className="w-1 shrink-0 self-stretch bg-linear-to-b from-ng-red via-ng-red to-ng-red/25 sm:w-1.5"
+              aria-hidden
+            />
+            <div className="min-w-0 flex-1 space-y-5">
+              <div className="space-y-3">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-ng-gold">
+                  About us
+                </p>
+                <div className="h-px w-14 bg-linear-to-r from-ng-gold/70 to-transparent" aria-hidden />
+              </div>
+              <h2 className="text-balance text-3xl font-bold leading-[1.12] tracking-tight text-ng-black dark:text-ng-cream sm:text-4xl lg:text-[2.5rem] lg:leading-[1.1] xl:text-5xl xl:tracking-[-0.02em]">
+                {about.title}
+              </h2>
+              <p className="max-w-md text-sm leading-relaxed text-ng-black/60 dark:text-ng-cream/55">{about.lead}</p>
             </div>
-          </div>
+          </header>
+
+          {/* Right: framed panel */}
+          <article
+            className={cn(
+              "group relative lg:col-span-7",
+              "border border-ng-concrete/25 border-l-4 border-l-ng-red bg-ng-white/82 backdrop-blur-sm dark:border-white/10 dark:bg-ng-charcoal/75",
+              "shadow-[0_24px_48px_-24px_rgba(15,15,15,0.22)] dark:shadow-[0_24px_48px_-24px_rgba(0,0,0,0.65)]",
+              "transition-all duration-300 ease-out",
+              "hover:border-ng-concrete/35 hover:shadow-[0_28px_56px_-20px_rgba(15,15,15,0.26)] dark:hover:border-white/15 dark:hover:shadow-[0_28px_56px_-20px_rgba(0,0,0,0.75)]",
+              "hover:-translate-y-0.5"
+            )}
+          >
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-linear-to-r from-ng-gold from-0% via-ng-gold/90 to-transparent to-55%"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute right-0 top-0 h-16 w-16 border-t border-r border-ng-gold/15 opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden
+            />
+
+            <div className="relative space-y-8 p-8 sm:p-9 lg:p-10">
+              <p className="text-base leading-[1.75] text-ng-black/78 dark:text-ng-cream/88 sm:text-lg sm:leading-relaxed">
+                {about.body}
+              </p>
+
+              <div className="space-y-4 border-t border-ng-concrete/20 pt-8 dark:border-white/10">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-ng-gold">
+                  {about.focusTitle}
+                </p>
+                <ul className="grid gap-2.5 sm:gap-3" role="list">
+                  {about.focus.map((item) => (
+                    <li key={item}>
+                      <div
+                        className={cn(
+                          "flex items-center gap-3 border border-ng-concrete/18 bg-[#f5f3ef]/65 px-4 py-3.5 dark:border-white/6 dark:bg-ng-black/35",
+                          "transition-colors duration-200",
+                          "hover:border-ng-red/35 hover:bg-ng-red/6"
+                        )}
+                      >
+                        <span
+                          className="size-2 shrink-0 bg-ng-red shadow-[0_0_0_1px_rgba(229,57,30,0.35)]"
+                          aria-hidden
+                        />
+                        <span className="text-sm font-medium text-ng-black/85 dark:text-ng-cream/95 sm:text-base">
+                          {item}
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </MotionSection>

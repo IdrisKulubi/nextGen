@@ -38,6 +38,8 @@ export const hero = {
 
 export const about = {
   title: "360° Construction & Real Estate Partner",
+  lead:
+    "Integrated delivery from design intent through supply and build — one accountable partner.",
   body: `NextGen Apex Global Masters Limited is a premier diversified enterprise dedicated to shaping the built environment through a seamless integration of construction, real estate, and logistics. By bridging the gap between visionary architectural design and robust supply chain management, we provide a 360-degree solution for infrastructure and property development.`,
   focusTitle: "Core focus",
   focus: ["Building & Construction", "Real Estate Services", "Supply & Logistics"] as const,

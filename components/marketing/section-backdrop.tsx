@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils"
 export type SectionBackdropTone = "dark" | "warm" | "charcoal"
 
 const toneOverlay: Record<SectionBackdropTone, string> = {
-  dark: "bg-ng-black/86",
+  dark: "bg-[#f7f4ee]/90 dark:bg-ng-black/86",
   warm: "bg-[#f5f3ef]/88",
-  charcoal: "bg-ng-charcoal/85",
+  charcoal: "bg-[#f4efe6]/88 dark:bg-ng-charcoal/85",
 }
 
 /**

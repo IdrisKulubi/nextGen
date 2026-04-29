@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 const initialState: ContactFormState = { ok: false }
 
 const fieldClass =
-  "w-full rounded-none border border-ng-concrete/35 bg-ng-black/50 px-4 py-3 text-sm text-ng-cream placeholder:text-ng-concrete/70 outline-none transition-colors focus-visible:border-ng-red focus-visible:ring-2 focus-visible:ring-ng-red/35"
+  "w-full rounded-none border border-ng-concrete/35 bg-ng-white/85 px-4 py-3 text-sm text-ng-black placeholder:text-ng-black/45 outline-none transition-colors focus-visible:border-ng-red focus-visible:ring-2 focus-visible:ring-ng-red/35 dark:bg-ng-black/50 dark:text-ng-cream dark:placeholder:text-ng-concrete/70"
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactAction, initialState)
@@ -18,11 +18,11 @@ export function ContactForm() {
   if (state.ok) {
     return (
       <div
-        className="border border-ng-concrete/25 border-t-2 border-t-ng-gold bg-ng-charcoal/80 p-8 text-center"
+        className="border border-ng-concrete/25 border-t-2 border-t-ng-gold bg-ng-white/85 p-8 text-center shadow-sm dark:bg-ng-charcoal/80 dark:shadow-none"
         role="status"
       >
-        <p className="text-lg font-semibold text-ng-cream">{state.message}</p>
-        <p className="mt-2 text-sm text-ng-concrete">We appreciate your interest in NextGen Apex.</p>
+        <p className="text-lg font-semibold text-ng-black dark:text-ng-cream">{state.message}</p>
+        <p className="mt-2 text-sm text-ng-black/60 dark:text-ng-concrete">We appreciate your interest in NextGen Apex.</p>
       </div>
     )
   }
@@ -30,7 +30,7 @@ export function ContactForm() {
   return (
     <form action={formAction} className="space-y-5" noValidate>
       {state.message ? (
-        <p className="border border-ng-red/50 bg-ng-red/10 px-4 py-3 text-sm text-ng-cream">
+        <p className="border border-ng-red/50 bg-ng-red/10 px-4 py-3 text-sm text-ng-black dark:text-ng-cream">
           {state.message}
         </p>
       ) : null}
@@ -120,7 +120,7 @@ export function ContactForm() {
             Select a service
           </option>
           {serviceInterestOptions.map((opt) => (
-            <option key={opt} value={opt} className="bg-ng-charcoal text-ng-cream">
+            <option key={opt} value={opt} className="bg-ng-white text-ng-black dark:bg-ng-charcoal dark:text-ng-cream">
               {opt}
             </option>
           ))}
