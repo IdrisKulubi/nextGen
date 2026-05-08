@@ -32,7 +32,7 @@ export function VisionMissionValuesSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal direction="right" className="lg:col-span-4">
-            <div className="border-l-4 border-ng-red pl-5">
+            <div className="border-l-4 border-ng-gold pl-5">
               <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                 Purpose
               </p>
@@ -54,10 +54,10 @@ export function VisionMissionValuesSection() {
                 className="grid gap-6 border-b border-ng-concrete/20 p-7 sm:grid-cols-[7rem_1fr] sm:p-9 dark:border-white/10"
               >
                 <div>
-                  <p className="font-heading text-4xl font-bold text-ng-red">
+                  <p className="font-heading text-4xl font-bold text-ng-black/35 dark:text-ng-gold">
                     01
                   </p>
-                  <h3 className="mt-3 text-xs font-bold tracking-[0.14em] text-ng-red uppercase">
+                  <h3 className="mt-3 text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
                     {visionMission.vision.title}
                   </h3>
                 </div>
@@ -72,10 +72,10 @@ export function VisionMissionValuesSection() {
                 className="grid gap-6 p-7 sm:grid-cols-[7rem_1fr] sm:p-9"
               >
                 <div>
-                  <p className="font-heading text-4xl font-bold text-ng-red">
+                  <p className="font-heading text-4xl font-bold text-ng-black/35 dark:text-ng-gold">
                     02
                   </p>
-                  <h3 className="mt-3 text-xs font-bold tracking-[0.14em] text-ng-red uppercase">
+                  <h3 className="mt-3 text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
                     {visionMission.mission.title}
                   </h3>
                 </div>
@@ -109,7 +109,7 @@ export function VisionMissionValuesSection() {
                 key={value}
                 className="min-h-40 border-b border-ng-concrete/20 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0 dark:border-white/10"
               >
-                <p className="text-xs font-bold tracking-[0.14em] text-ng-red uppercase">
+                <p className="text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
                   {value}
                 </p>
                 <p className="mt-5 text-sm leading-6 text-ng-black/62 dark:text-ng-concrete">

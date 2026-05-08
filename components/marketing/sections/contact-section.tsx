@@ -38,7 +38,7 @@ export function ContactSection() {
                   <dd className="mt-1">
                     <a
                       href={`mailto:${contact.email}`}
-                      className="text-ng-black/80 hover:text-ng-red dark:text-ng-cream"
+                      className="text-ng-black/80 hover:text-ng-gold dark:text-ng-cream"
                     >
                       {contact.email}
                     </a>
@@ -51,7 +51,7 @@ export function ContactSection() {
                   <dd className="mt-1">
                     <a
                       href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                      className="text-ng-black/80 hover:text-ng-red dark:text-ng-cream"
+                      className="text-ng-black/80 hover:text-ng-gold dark:text-ng-cream"
                     >
                       {contact.phone}
                     </a>

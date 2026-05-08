@@ -44,7 +44,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ng-black/75 transition-colors hover:text-ng-red dark:text-ng-cream/85"
+              className="text-sm font-medium text-ng-black/75 transition-colors hover:text-ng-gold dark:text-ng-cream/85"
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:gap-3">
-          <ModeToggle className="text-ng-black hover:bg-ng-black/5 hover:text-ng-red focus-visible:ring-ng-red/40 dark:text-ng-cream dark:hover:bg-white/10 dark:hover:text-ng-cream" />
+          <ModeToggle className="text-ng-black hover:bg-ng-black/5 hover:text-ng-gold focus-visible:ring-ng-gold/40 dark:text-ng-cream dark:hover:bg-white/10 dark:hover:text-ng-cream" />
           <div className="flex items-center gap-2 md:hidden">
             <Dialog.Root open={open} onOpenChange={setOpen}>
               <Dialog.Trigger asChild>
@@ -67,15 +67,15 @@ export function SiteHeader() {
                 </Button>
               </Dialog.Trigger>
               <Dialog.Portal>
-                <Dialog.Overlay className="fixed inset-0 z-50 bg-black/70 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-                <Dialog.Content
-                  className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col border-l border-ng-concrete/25 bg-ng-white p-6 shadow-2xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right dark:border-white/10 dark:bg-ng-charcoal duration-200"
-                >
+                <Dialog.Overlay className="fixed inset-0 z-50 bg-black/70 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+                <Dialog.Content className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col border-l border-ng-concrete/25 bg-ng-white p-6 shadow-2xl duration-200 outline-none data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:animate-in data-[state=open]:slide-in-from-right dark:border-white/10 dark:bg-ng-charcoal">
                   <Dialog.Description className="sr-only">
                     Main site sections and contact.
                   </Dialog.Description>
                   <div className="mb-8 flex items-center justify-between">
-                    <Dialog.Title className="text-lg font-bold text-ng-black dark:text-ng-cream">Menu</Dialog.Title>
+                    <Dialog.Title className="text-lg font-bold text-ng-black dark:text-ng-cream">
+                      Menu
+                    </Dialog.Title>
                     <Dialog.Close asChild>
                       <Button
                         type="button"
@@ -93,7 +93,7 @@ export function SiteHeader() {
                       <Dialog.Close asChild key={link.href}>
                         <Link
                           href={link.href}
-                          className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-red/10 hover:text-ng-red dark:text-ng-cream/90"
+                          className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
                         >
                           {link.label}
                         </Link>
@@ -102,7 +102,11 @@ export function SiteHeader() {
                   </nav>
                   <div className="mt-6 border-t border-ng-concrete/25 pt-6 dark:border-white/10">
                     <Dialog.Close asChild>
-                      <Button asChild variant="heroPrimary" className="w-full font-semibold">
+                      <Button
+                        asChild
+                        variant="heroPrimary"
+                        className="w-full font-semibold"
+                      >
                         <Link href="#contact">Request a Quote</Link>
                       </Button>
                     </Dialog.Close>
@@ -120,7 +124,12 @@ export function SiteHeader() {
             </Button>
           </div>
 
-          <Button asChild variant="heroPrimary" size="sm" className="hidden h-9 px-4 font-semibold md:inline-flex">
+          <Button
+            asChild
+            variant="heroPrimary"
+            size="sm"
+            className="hidden h-9 px-4 font-semibold md:inline-flex"
+          >
             <Link href="#contact">Request a Quote</Link>
           </Button>
         </div>

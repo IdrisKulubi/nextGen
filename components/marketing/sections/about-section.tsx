@@ -23,7 +23,7 @@ export function AboutSection() {
             className="flex gap-5 sm:gap-6 lg:col-span-5 lg:flex-col lg:justify-center"
           >
             <div
-              className="w-1 shrink-0 self-stretch bg-linear-to-b from-ng-red via-ng-red to-ng-red/25 sm:w-1.5"
+              className="w-1 shrink-0 self-stretch bg-linear-to-b from-ng-gold via-ng-gold to-ng-gold/25 sm:w-1.5"
               aria-hidden
             />
             <div className="min-w-0 flex-1 space-y-5">
@@ -51,7 +51,7 @@ export function AboutSection() {
             delay={0.12}
             className={cn(
               "group relative lg:col-span-7",
-              "border border-l-4 border-ng-concrete/25 border-l-ng-red bg-ng-white/82 backdrop-blur-sm dark:border-white/10 dark:bg-ng-charcoal/75",
+              "border border-l-4 border-ng-concrete/25 border-l-ng-gold bg-ng-white/82 backdrop-blur-sm dark:border-white/10 dark:bg-ng-charcoal/75",
               "shadow-[0_24px_48px_-24px_rgba(15,15,15,0.22)] dark:shadow-[0_24px_48px_-24px_rgba(0,0,0,0.65)]",
               "transition-all duration-300 ease-out",
               "hover:border-ng-concrete/35 hover:shadow-[0_28px_56px_-20px_rgba(15,15,15,0.26)] dark:hover:border-white/15 dark:hover:shadow-[0_28px_56px_-20px_rgba(0,0,0,0.75)]",
@@ -83,11 +83,11 @@ export function AboutSection() {
                         className={cn(
                           "flex items-center gap-3 border border-ng-concrete/18 bg-[#f5f3ef]/65 px-4 py-3.5 dark:border-white/6 dark:bg-ng-black/35",
                           "transition-colors duration-200",
-                          "hover:border-ng-red/35 hover:bg-ng-red/6"
+                          "hover:border-ng-gold/40 hover:bg-ng-gold/8"
                         )}
                       >
                         <span
-                          className="size-2 shrink-0 bg-ng-red shadow-[0_0_0_1px_rgba(229,57,30,0.35)]"
+                          className="size-2 shrink-0 bg-ng-gold shadow-[0_0_0_1px_rgba(184,176,138,0.35)]"
                           aria-hidden
                         />
                         <span className="text-sm font-medium text-ng-black/85 sm:text-base dark:text-ng-cream/95">

@@ -39,13 +39,13 @@ export function HeroSection() {
           <Reveal
             direction="down"
             delay={0.08}
-            className="w-1 shrink-0 self-stretch bg-ng-red"
+            className="w-1 shrink-0 self-stretch bg-ng-gold"
             aria-hidden
           />
 
           <div className="min-w-0 flex-1 text-left">
             <Reveal direction="up" delay={0.08} className="mb-5">
-              <span className="inline-block rounded-md bg-ng-red px-3 py-2 text-[0.625rem] leading-tight font-bold tracking-wide text-white uppercase sm:text-xs sm:tracking-wider">
+              <span className="inline-block rounded-md bg-ng-gold px-3 py-2 text-[0.625rem] leading-tight font-bold tracking-wide text-ng-black uppercase sm:text-xs sm:tracking-wider">
                 {COMPANY_NAME}
               </span>
             </Reveal>
@@ -55,8 +55,13 @@ export function HeroSection() {
                 <span className="block text-ng-cream">
                   {hero.headlineLineWhite}
                 </span>
-                {hero.headlineLinesRed.map((line) => (
-                  <span key={line} className="block text-ng-red">
+                {hero.headlineLinesRed.map((line, i) => (
+                  <span
+                    key={line}
+                    className={
+                      i === 0 ? "block text-ng-cream" : "block text-ng-gold"
+                    }
+                  >
                     {line}
                   </span>
                 ))}
@@ -78,7 +83,7 @@ export function HeroSection() {
               >
                 <Link
                   href="#contact"
-                  className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-red hover:text-ng-cream"
+                  className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-gold hover:text-ng-cream"
                 >
                   {hero.ctaPrimary}
                 </Link>

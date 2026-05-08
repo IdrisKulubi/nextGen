@@ -44,7 +44,7 @@ export function ServicesSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal direction="right" className="lg:col-span-4">
-            <div className="border-l-4 border-ng-red pl-5">
+            <div className="border-l-4 border-ng-gold pl-5">
               <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                 What we do
               </p>
@@ -64,10 +64,10 @@ export function ServicesSection() {
               direction="left"
               className="group relative overflow-hidden border border-ng-concrete/25 bg-ng-white/78 shadow-[0_22px_48px_-30px_rgba(15,15,15,0.45)] dark:border-white/10 dark:bg-ng-charcoal/55 dark:shadow-none"
             >
-              <div className="absolute inset-y-0 left-0 w-1.5 bg-ng-red" />
+              <div className="absolute inset-y-0 left-0 w-1.5 bg-ng-gold" />
               <div className="grid gap-8 p-7 sm:grid-cols-[1fr_auto] sm:p-9">
                 <div>
-                  <p className="font-heading text-sm font-bold tracking-[0.18em] text-ng-red">
+                  <p className="font-heading text-sm font-bold tracking-[0.18em] text-ng-black/55 dark:text-ng-gold">
                     01 / Core delivery
                   </p>
                   <h3 className="mt-6 text-2xl font-bold tracking-tight text-ng-black sm:text-3xl dark:text-ng-cream">
@@ -77,7 +77,7 @@ export function ServicesSection() {
                     {primaryService.description}
                   </p>
                 </div>
-                <div className="flex size-16 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-red group-hover:text-ng-red">
+                <div className="flex size-16 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-gold/70 group-hover:text-ng-gold">
                   <HardHat className="size-8" weight="duotone" aria-hidden />
                 </div>
               </div>
@@ -93,10 +93,10 @@ export function ServicesSection() {
                   <StaggerItem key={service.title}>
                     <article className="group grid gap-5 bg-[#f8f6f1]/70 px-0 py-6 transition-colors hover:bg-ng-white/86 sm:grid-cols-[4.5rem_1fr_auto] sm:items-start sm:px-6 dark:bg-ng-black/20 dark:hover:bg-ng-black/34">
                       <div className="flex items-center gap-4 sm:block">
-                        <span className="font-heading text-sm font-bold tracking-[0.18em] text-ng-red">
+                        <span className="font-heading text-sm font-bold tracking-[0.18em] text-ng-black/45 dark:text-ng-gold">
                           {number}
                         </span>
-                        <div className="flex size-10 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-red group-hover:text-ng-red sm:mt-4">
+                        <div className="flex size-10 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-gold/70 group-hover:text-ng-gold sm:mt-4">
                           <Icon
                             className="size-5"
                             weight="duotone"
@@ -115,7 +115,7 @@ export function ServicesSection() {
                       </div>
 
                       <div
-                        className="hidden h-full w-px bg-linear-to-b from-ng-red via-ng-red/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100 sm:block"
+                        className="hidden h-full w-px bg-linear-to-b from-ng-gold via-ng-gold/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100 sm:block"
                         aria-hidden
                       />
                     </article>

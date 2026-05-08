@@ -27,7 +27,7 @@ export function WhyChooseUsSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <Reveal direction="right" className="lg:col-span-4">
-            <div className="border-l-4 border-ng-red pl-5">
+            <div className="border-l-4 border-ng-gold pl-5">
               <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                 Why NextGen
               </p>
@@ -42,7 +42,7 @@ export function WhyChooseUsSection() {
             </p>
             <div className="mt-8 grid grid-cols-2 border-y border-ng-concrete/20 py-5 dark:border-white/10">
               <div>
-                <p className="font-heading text-3xl font-bold text-ng-red">
+                <p className="font-heading text-3xl font-bold text-ng-black/40 dark:text-ng-gold">
                   360
                 </p>
                 <p className="mt-1 text-xs font-semibold tracking-[0.08em] text-ng-black/55 uppercase dark:text-ng-concrete">
@@ -50,7 +50,7 @@ export function WhyChooseUsSection() {
                 </p>
               </div>
               <div className="border-l border-ng-concrete/20 pl-5 dark:border-white/10">
-                <p className="font-heading text-3xl font-bold text-ng-red">
+                <p className="font-heading text-3xl font-bold text-ng-black/40 dark:text-ng-gold">
                   01
                 </p>
                 <p className="mt-1 text-xs font-semibold tracking-[0.08em] text-ng-black/55 uppercase dark:text-ng-concrete">
@@ -69,10 +69,10 @@ export function WhyChooseUsSection() {
                 <StaggerItem key={item.title} className="group">
                   <article className="relative grid gap-5 border-t border-ng-concrete/25 bg-ng-white/72 px-0 py-7 transition-colors first:border-t-0 hover:bg-ng-white/90 sm:grid-cols-[5rem_1fr_auto] sm:items-start sm:px-6 dark:border-white/10 dark:bg-ng-black/24 dark:hover:bg-ng-black/36">
                     <div className="flex items-center gap-4 sm:block">
-                      <span className="font-heading text-sm font-bold tracking-[0.18em] text-ng-red">
+                      <span className="font-heading text-sm font-bold tracking-[0.18em] text-ng-black/45 dark:text-ng-gold">
                         {number}
                       </span>
-                      <div className="flex size-11 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-red group-hover:text-ng-red sm:mt-5">
+                      <div className="flex size-11 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-gold/70 group-hover:text-ng-gold sm:mt-5">
                         <Icon className="size-6" weight="duotone" aria-hidden />
                       </div>
                     </div>
@@ -87,7 +87,7 @@ export function WhyChooseUsSection() {
                     </div>
 
                     <div
-                      className="hidden h-full w-px bg-linear-to-b from-ng-red via-ng-red/55 to-transparent opacity-0 transition-opacity group-hover:opacity-100 sm:block"
+                      className="hidden h-full w-px bg-linear-to-b from-ng-gold via-ng-gold/55 to-transparent opacity-0 transition-opacity group-hover:opacity-100 sm:block"
                       aria-hidden
                     />
                   </article>
