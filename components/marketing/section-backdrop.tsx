@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils"
 export type SectionBackdropTone = "dark" | "warm" | "charcoal"
 
 const toneOverlay: Record<SectionBackdropTone, string> = {
-  dark: "bg-[#f7f4ee]/90 dark:bg-ng-black/86",
-  warm: "bg-[#f5f3ef]/88",
-  charcoal: "bg-[#f4efe6]/88 dark:bg-ng-charcoal/85",
+  dark: "bg-[#f7f4ee]/82 dark:bg-ng-black/78",
+  warm: "bg-[#f5f3ef]/80",
+  charcoal: "bg-[#f4efe6]/80 dark:bg-ng-charcoal/76",
 }
 
 /**
@@ -46,7 +46,7 @@ export function SectionBackdrop({
           fill
           sizes="100vw"
           className={cn(
-            "object-cover opacity-[0.2] saturate-[0.75] sm:opacity-[0.24]",
+            "object-cover opacity-[0.28] saturate-[0.78] sm:opacity-[0.34]",
             imageClassName
           )}
         />

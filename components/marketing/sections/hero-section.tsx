@@ -6,6 +6,7 @@ import {
   Reveal,
   StaggerGroup,
 } from "@/components/marketing/motion-section"
+import { TypingHeadlinePhrase } from "@/components/marketing/typing-headline-phrase"
 import { COMPANY_NAME, HERO_IMAGE_PATH, hero } from "@/lib/site-content"
 
 export function HeroSection() {
@@ -24,12 +25,12 @@ export function HeroSection() {
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-ng-black via-ng-black/80 to-ng-black/45"
+          className="absolute inset-0 bg-gradient-to-t from-ng-black/72 via-ng-black/36 to-ng-black/12"
           aria-hidden
         />
         {/* Dark on the left so left-aligned copy stays readable (matches reference) */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-ng-black/92 via-ng-black/45 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-ng-black/78 via-ng-black/28 to-transparent"
           aria-hidden
         />
       </div>
@@ -55,16 +56,12 @@ export function HeroSection() {
                 <span className="block text-ng-cream">
                   {hero.headlineLineWhite}
                 </span>
-                {hero.headlineLinesRed.map((line, i) => (
-                  <span
-                    key={line}
-                    className={
-                      i === 0 ? "block text-ng-cream" : "block text-ng-gold"
-                    }
-                  >
-                    {line}
-                  </span>
-                ))}
+                <span className="block text-ng-cream">
+                  {hero.headlineLinesRed[0]}
+                </span>
+                <span className="block">
+                  <TypingHeadlinePhrase text={hero.headlineLinesRed[1]} />
+                </span>
               </h1>
             </Reveal>
 

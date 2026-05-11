@@ -7,17 +7,6 @@ import {
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
 import { sectionBackdropImages, visionMission } from "@/lib/site-content"
 
-const valueDescriptions: Record<(typeof visionMission.values)[number], string> =
-  {
-    Integrity:
-      "Clear commitments, honest reporting, and decisions clients can trust.",
-    Innovation: "Modern methods shaped around practical project outcomes.",
-    Quality:
-      "Durable workmanship, careful coordination, and disciplined standards.",
-    Reliability:
-      "Consistent delivery through dependable teams and supply systems.",
-  }
-
 export function VisionMissionValuesSection() {
   return (
     <MotionSection
@@ -41,9 +30,9 @@ export function VisionMissionValuesSection() {
               </h2>
             </div>
             <p className="mt-6 max-w-md text-sm leading-7 text-ng-black/65 sm:text-base dark:text-ng-concrete">
-              A practical operating framework for how NextGen plans, builds,
-              supplies, and stays accountable from first conversation to final
-              handover.
+              Our Vision and Mission guide how Nextgen Apex Global Masters
+              Limited approaches construction, real estate services, and
+              efficient supply chain management.
             </p>
           </Reveal>
 
@@ -98,22 +87,22 @@ export function VisionMissionValuesSection() {
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-6 text-ng-black/55 dark:text-ng-concrete">
-              Simple principles, applied consistently across design, sourcing,
-              construction, and client communication.
+              Exact principles from the company profile, applied across
+              construction, logistics, sourcing, and client communication.
             </p>
           </div>
 
           <StaggerList className="mt-8 grid border border-ng-concrete/25 bg-ng-white/60 sm:grid-cols-2 lg:grid-cols-4 dark:border-white/10 dark:bg-ng-charcoal/40">
             {visionMission.values.map((value) => (
               <StaggerItem
-                key={value}
-                className="min-h-40 border-b border-ng-concrete/20 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0 dark:border-white/10"
+                key={value.title}
+                className="min-h-56 border-b border-ng-concrete/20 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0 dark:border-white/10"
               >
                 <p className="text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
-                  {value}
+                  {value.title}
                 </p>
                 <p className="mt-5 text-sm leading-6 text-ng-black/62 dark:text-ng-concrete">
-                  {valueDescriptions[value]}
+                  {value.description}
                 </p>
               </StaggerItem>
             ))}

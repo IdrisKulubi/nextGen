@@ -76,23 +76,31 @@ export function AboutSection() {
                 <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                   {about.focusTitle}
                 </p>
+                <p className="text-sm leading-7 text-ng-black/64 dark:text-ng-concrete">
+                  {about.focusIntro}
+                </p>
                 <StaggerList className="grid gap-2.5 sm:gap-3" role="list">
                   {about.focus.map((item) => (
-                    <StaggerItem key={item}>
+                    <StaggerItem key={item.title}>
                       <div
                         className={cn(
-                          "flex items-center gap-3 border border-ng-concrete/18 bg-[#f5f3ef]/65 px-4 py-3.5 dark:border-white/6 dark:bg-ng-black/35",
+                          "grid gap-3 border border-ng-concrete/18 bg-[#f5f3ef]/65 px-4 py-4 dark:border-white/6 dark:bg-ng-black/35",
                           "transition-colors duration-200",
                           "hover:border-ng-gold/40 hover:bg-ng-gold/8"
                         )}
                       >
-                        <span
-                          className="size-2 shrink-0 bg-ng-gold shadow-[0_0_0_1px_rgba(184,176,138,0.35)]"
-                          aria-hidden
-                        />
-                        <span className="text-sm font-medium text-ng-black/85 sm:text-base dark:text-ng-cream/95">
-                          {item}
-                        </span>
+                        <div className="flex items-center gap-3">
+                          <span
+                            className="size-2 shrink-0 bg-ng-gold shadow-[0_0_0_1px_rgba(184,176,138,0.35)]"
+                            aria-hidden
+                          />
+                          <span className="text-sm font-bold text-ng-black/85 sm:text-base dark:text-ng-cream/95">
+                            {item.title}
+                          </span>
+                        </div>
+                        <p className="pl-5 text-sm leading-6 text-ng-black/62 dark:text-ng-concrete">
+                          {item.description}
+                        </p>
                       </div>
                     </StaggerItem>
                   ))}

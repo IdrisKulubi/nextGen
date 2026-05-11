@@ -13,14 +13,13 @@ export function ContactSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal direction="up" className="max-w-2xl">
           <p className="text-xs font-bold tracking-[0.1em] text-ng-gold uppercase">
-            Contact
+            Contact Us
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ng-black sm:text-4xl lg:tracking-[-0.02em] dark:text-ng-cream">
-            Start a conversation
+            {contact.companyLegal}
           </h2>
           <p className="mt-4 text-base text-ng-black/65 dark:text-ng-concrete">
-            Share your project scope and our team will follow up with next
-            steps.
+            {contact.email} / {contact.phone}
           </p>
         </Reveal>
 

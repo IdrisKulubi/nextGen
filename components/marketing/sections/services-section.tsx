@@ -16,7 +16,11 @@ import {
   StaggerList,
 } from "@/components/marketing/motion-section"
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
-import { sectionBackdropImages, services } from "@/lib/site-content"
+import {
+  sectionBackdropImages,
+  services,
+  servicesIntro,
+} from "@/lib/site-content"
 
 const icons = [
   HardHat,
@@ -49,13 +53,11 @@ export function ServicesSection() {
                 What we do
               </p>
               <h2 className="mt-4 text-3xl leading-tight font-bold tracking-tight text-ng-black sm:text-4xl dark:text-ng-cream">
-                Services built for scale
+                Product & Services
               </h2>
             </div>
             <p className="mt-6 max-w-md text-sm leading-7 text-ng-black/65 sm:text-base dark:text-ng-concrete">
-              End-to-end capability across construction, property, design,
-              delivery, and supply, organized around the realities of live
-              project sites.
+              {servicesIntro.text}
             </p>
           </Reveal>
 
@@ -68,7 +70,7 @@ export function ServicesSection() {
               <div className="grid gap-8 p-7 sm:grid-cols-[1fr_auto] sm:p-9">
                 <div>
                   <p className="font-heading text-sm font-bold tracking-[0.18em] text-ng-black/55 dark:text-ng-gold">
-                    01 / Core delivery
+                    01 / {servicesIntro.title}
                   </p>
                   <h3 className="mt-6 text-2xl font-bold tracking-tight text-ng-black sm:text-3xl dark:text-ng-cream">
                     {primaryService.title}

@@ -36,9 +36,7 @@ export function WhyChooseUsSection() {
               </h2>
             </div>
             <p className="mt-6 max-w-md text-sm leading-7 text-ng-black/65 sm:text-base dark:text-ng-concrete">
-              One team coordinates design thinking, procurement, site delivery,
-              and material flow, so projects move with fewer handoffs and
-              clearer accountability.
+              {whyChooseUs.intro}
             </p>
             <div className="mt-8 grid grid-cols-2 border-y border-ng-concrete/20 py-5 dark:border-white/10">
               <div>
@@ -61,7 +59,7 @@ export function WhyChooseUsSection() {
           </Reveal>
 
           <StaggerList className="lg:col-span-8">
-            {whyChooseUs.map((item, i) => {
+            {whyChooseUs.items.map((item, i) => {
               const Icon = icons[i] ?? Stack
               const number = String(i + 1).padStart(2, "0")
 

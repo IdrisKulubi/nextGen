@@ -37,14 +37,14 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-5 md:flex lg:gap-8"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-4 md:flex lg:gap-6"
           aria-label="Main"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ng-black/75 transition-colors hover:text-ng-gold dark:text-ng-cream/85"
+              className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
             >
               {link.label}
             </Link>
