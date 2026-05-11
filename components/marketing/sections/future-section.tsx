@@ -11,7 +11,7 @@ export function FutureSection() {
       <SectionBackdrop
         src={sectionBackdropImages.future}
         tone="charcoal"
-        imageClassName="opacity-[0.12] saturate-[0.55] sm:opacity-[0.16]"
+        imageClassName="opacity-[0.24] saturate-[0.68] sm:opacity-[0.3]"
       />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal

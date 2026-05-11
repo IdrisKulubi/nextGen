@@ -22,7 +22,7 @@ export function WhyChooseUsSection() {
       <SectionBackdrop
         src={sectionBackdropImages.whyChooseUs}
         tone="charcoal"
-        imageClassName="opacity-[0.14] saturate-[0.65] sm:opacity-[0.18]"
+        imageClassName="opacity-[0.24] saturate-[0.7] sm:opacity-[0.32]"
       />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">

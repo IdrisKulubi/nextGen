@@ -42,8 +42,8 @@ export function ServicesSection() {
       <SectionBackdrop
         src={sectionBackdropImages.services}
         tone="warm"
-        imageClassName="object-cover object-center opacity-[0.18] saturate-[0.65] sm:opacity-[0.22]"
-        overlayClassName="bg-gradient-to-b from-[#f5f3ef]/86 via-[#f5f3ef]/78 to-[#ebe6dd]/90 dark:from-ng-black/88 dark:via-ng-black/82 dark:to-ng-black/92"
+        imageClassName="object-cover object-center opacity-[0.3] saturate-[0.72] sm:opacity-[0.38]"
+        overlayClassName="bg-gradient-to-b from-[#f5f3ef]/76 via-[#f5f3ef]/68 to-[#ebe6dd]/82 dark:from-ng-black/78 dark:via-ng-black/70 dark:to-ng-black/84"
       />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">

@@ -16,7 +16,7 @@ export function VisionMissionValuesSection() {
       <SectionBackdrop
         src={sectionBackdropImages.vision}
         tone="dark"
-        imageClassName="opacity-[0.11] saturate-[0.55] sm:opacity-[0.15]"
+        imageClassName="opacity-[0.24] saturate-[0.68] sm:opacity-[0.3]"
       />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
