@@ -6,6 +6,7 @@ import {
   Reveal,
   StaggerGroup,
 } from "@/components/marketing/motion-section"
+import { ContactOptionsDialog } from "@/components/marketing/contact-options-dialog"
 import { TypingHeadlinePhrase } from "@/components/marketing/typing-headline-phrase"
 import { COMPANY_NAME, HERO_IMAGE_PATH, hero } from "@/lib/site-content"
 
@@ -78,12 +79,9 @@ export function HeroSection() {
                 className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-base font-medium text-ng-cream"
                 aria-label="Hero actions"
               >
-                <Link
-                  href="#contact"
-                  className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-gold hover:text-ng-cream"
-                >
+                <ContactOptionsDialog className="border-b-2 border-transparent pb-0.5 text-left transition-colors hover:border-ng-gold hover:text-ng-cream">
                   {hero.ctaPrimary}
-                </Link>
+                </ContactOptionsDialog>
                 <Link
                   href="#services"
                   className="border-b-2 border-transparent pb-0.5 transition-colors hover:border-ng-gold hover:text-ng-cream"

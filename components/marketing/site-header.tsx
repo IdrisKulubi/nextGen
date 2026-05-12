@@ -6,6 +6,7 @@ import { List, X } from "@phosphor-icons/react"
 import { Dialog } from "radix-ui"
 
 import { Button } from "@/components/ui/button"
+import { ContactOptionsDialog } from "@/components/marketing/contact-options-dialog"
 import { ModeToggle } from "@/components/theme/mode-toggle"
 import { navLinks } from "@/lib/site-content"
 import Image from "next/image"
@@ -40,15 +41,24 @@ export function SiteHeader() {
           className="hidden min-w-0 flex-1 items-center justify-center gap-4 md:flex lg:gap-6"
           aria-label="Main"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.href === "#contact" ? (
+              <ContactOptionsDialog
+                key={link.href}
+                className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
+              >
+                {link.label}
+              </ContactOptionsDialog>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:gap-3">
@@ -89,49 +99,42 @@ export function SiteHeader() {
                     </Dialog.Close>
                   </div>
                   <nav className="flex flex-col gap-1" aria-label="Mobile">
-                    {navLinks.map((link) => (
-                      <Dialog.Close asChild key={link.href}>
-                        <Link
-                          href={link.href}
-                          className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
+                    {navLinks.map((link) =>
+                      link.href === "#contact" ? (
+                        <ContactOptionsDialog
+                          key={link.href}
+                          className="px-3 py-3 text-left text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
                         >
                           {link.label}
-                        </Link>
-                      </Dialog.Close>
-                    ))}
+                        </ContactOptionsDialog>
+                      ) : (
+                        <Dialog.Close asChild key={link.href}>
+                          <Link
+                            href={link.href}
+                            className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
+                          >
+                            {link.label}
+                          </Link>
+                        </Dialog.Close>
+                      )
+                    )}
                   </nav>
                   <div className="mt-6 border-t border-ng-concrete/25 pt-6 dark:border-white/10">
-                    <Dialog.Close asChild>
-                      <Button
-                        asChild
-                        variant="heroPrimary"
-                        className="w-full font-semibold"
-                      >
-                        <Link href="#contact">Request a Quote</Link>
-                      </Button>
-                    </Dialog.Close>
+                    <ContactOptionsDialog className="inline-flex h-8 w-full shrink-0 items-center justify-center rounded-lg border border-transparent bg-ng-red px-2.5 text-sm font-semibold whitespace-nowrap text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50">
+                      Request a Quote
+                    </ContactOptionsDialog>
                   </div>
                 </Dialog.Content>
               </Dialog.Portal>
             </Dialog.Root>
-            <Button
-              asChild
-              variant="heroPrimary"
-              size="sm"
-              className="h-9 shrink-0 px-2.5 text-xs font-semibold sm:px-4 sm:text-sm"
-            >
-              <Link href="#contact">Request a Quote</Link>
-            </Button>
+            <ContactOptionsDialog className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg border border-transparent bg-ng-red px-2.5 text-xs font-semibold whitespace-nowrap text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 sm:px-4 sm:text-sm">
+              Request a Quote
+            </ContactOptionsDialog>
           </div>
 
-          <Button
-            asChild
-            variant="heroPrimary"
-            size="sm"
-            className="hidden h-9 px-4 font-semibold md:inline-flex"
-          >
-            <Link href="#contact">Request a Quote</Link>
-          </Button>
+          <ContactOptionsDialog className="hidden h-9 shrink-0 items-center justify-center rounded-lg border border-transparent bg-ng-red px-4 text-sm font-semibold whitespace-nowrap text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:inline-flex">
+            Request a Quote
+          </ContactOptionsDialog>
         </div>
       </div>
     </header>

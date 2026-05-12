@@ -159,8 +159,14 @@ export const contact = {
   companyLegal: "NEXTGEN APEX GLOBAL MASTERS",
   email: "INFO.NEXTGENAPEX254@GMAIL.COM",
   phone: "+254720856826",
+  whatsapp: "+254720856826",
   address: "P.O BOX 304, 10205 - MARAGUA",
   formCta: "Talk to NextGen Today",
+} as const
+
+export const contactLinks = {
+  email: `mailto:${contact.email}?subject=${encodeURIComponent("Quote request - NextGen Apex Global Masters")}`,
+  whatsapp: `https://wa.me/${contact.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hello NextGen Apex Global Masters, I would like to request a quote.")}`,
 } as const
 
 export const serviceInterestOptions = [

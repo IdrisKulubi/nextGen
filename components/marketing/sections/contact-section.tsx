@@ -1,7 +1,12 @@
 import { MotionSection, Reveal } from "@/components/marketing/motion-section"
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
 import { ContactForm } from "@/components/marketing/contact-form"
-import { contact, sectionBackdropImages } from "@/lib/site-content"
+import { ContactOptionsDialog } from "@/components/marketing/contact-options-dialog"
+import {
+  contact,
+  contactLinks,
+  sectionBackdropImages,
+} from "@/lib/site-content"
 
 export function ContactSection() {
   return (
@@ -21,6 +26,9 @@ export function ContactSection() {
           <p className="mt-4 text-base text-ng-black/65 dark:text-ng-concrete">
             {contact.email} / {contact.phone}
           </p>
+          <ContactOptionsDialog className="mt-7 inline-flex h-11 items-center justify-center rounded-lg border border-transparent bg-ng-red px-5 text-sm font-semibold text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50">
+            Contact Us
+          </ContactOptionsDialog>
         </Reveal>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
@@ -65,6 +73,22 @@ export function ContactSection() {
                   </dd>
                 </div>
               </dl>
+              <div className="mt-7 grid gap-3 border-t border-ng-concrete/20 pt-6 dark:border-white/10">
+                <a
+                  href={contactLinks.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border border-ng-concrete/25 px-4 py-3 text-sm font-semibold text-ng-black transition-colors hover:border-ng-gold/60 hover:bg-ng-gold/10 dark:border-white/10 dark:text-ng-cream"
+                >
+                  Chat on WhatsApp
+                </a>
+                <a
+                  href={contactLinks.email}
+                  className="border border-ng-concrete/25 px-4 py-3 text-sm font-semibold text-ng-black transition-colors hover:border-ng-gold/60 hover:bg-ng-gold/10 dark:border-white/10 dark:text-ng-cream"
+                >
+                  Send an Email
+                </a>
+              </div>
             </div>
           </Reveal>
 
