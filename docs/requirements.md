@@ -103,7 +103,7 @@ A strong internal supply chain supported by hardware, electrical, and logistics 
 ### 5.6 Contact Section
 Include:
 Company: NEXTGEN APEX GLOBAL MASTERS LTD  
-Email: info.nextgenapex254@gmail.com  
+Email: info@nextgeninfra.co.ke 
 Phone: +254720856826  
 Address: P.O BOX 304, 10205 - Maragua  
 
@@ -310,7 +310,7 @@ A strong internal supply chain supported by hardware, electrical, and logistics 
 ### 5.6 Contact Section
 Include:
 Company: NEXTGEN APEX GLOBAL MASTERS LTD  
-Email: info.nextgenapex254@gmail.com  
+Email: info@nextgeninfra.co.ke 
 Phone: +254720856826  
 Address: P.O BOX 304, 10205 - Maragua  
 

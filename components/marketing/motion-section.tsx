@@ -6,38 +6,36 @@ import { cn } from "@/lib/utils"
 
 type RevealDirection = "up" | "down" | "left" | "right" | "none"
 
-const easeOut = [0.22, 1, 0.36, 1] as const
+const easeOut = [0.16, 1, 0.3, 1] as const
 
 const motionProps = {
-  initial: { opacity: 0, y: 34, scale: 0.985 },
+  initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-12% 0px" },
-  transition: { duration: 0.68, ease: easeOut },
+  viewport: { once: true, margin: "-8% 0px" },
+  transition: { duration: 0.45, ease: easeOut },
 } satisfies Pick<
   HTMLMotionProps<"section">,
   "initial" | "whileInView" | "viewport" | "transition"
 >
 
 const directionOffset: Record<RevealDirection, { x?: number; y?: number }> = {
-  up: { y: 28 },
-  down: { y: -22 },
-  left: { x: 32 },
-  right: { x: -32 },
+  up: { y: 14 },
+  down: { y: -12 },
+  left: { x: 18 },
+  right: { x: -18 },
   none: {},
 }
 
 const revealVariants = {
   hidden: ({ direction }: { direction: RevealDirection }) => ({
     opacity: 0,
-    scale: 0.985,
     ...directionOffset[direction],
   }),
   visible: ({ delay = 0 }: { delay?: number }) => ({
     opacity: 1,
     x: 0,
     y: 0,
-    scale: 1,
-    transition: { duration: 0.68, delay, ease: easeOut },
+    transition: { duration: 0.42, delay, ease: easeOut },
   }),
 }
 
@@ -45,19 +43,18 @@ const staggerContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.09,
-      delayChildren: 0.08,
+      staggerChildren: 0.06,
+      delayChildren: 0.04,
     },
   },
 }
 
 const staggerItem = {
-  hidden: { opacity: 0, y: 30, scale: 0.97 },
+  hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: { duration: 0.58, ease: easeOut },
+    transition: { duration: 0.38, ease: easeOut },
   },
 }
 
@@ -87,7 +84,7 @@ export function Reveal({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.28, margin: "-10% 0px" }}
+      viewport={{ once: true, amount: 0.2, margin: "-6% 0px" }}
       variants={revealVariants}
       custom={{ direction, delay }}
       className={cn(className)}
@@ -107,7 +104,7 @@ export function StaggerGroup({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.18, margin: "-8% 0px" }}
+      viewport={{ once: true, amount: 0.15, margin: "-6% 0px" }}
       variants={staggerContainer}
       className={cn(className)}
       {...rest}
@@ -126,7 +123,7 @@ export function StaggerList({
     <motion.ul
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.18, margin: "-8% 0px" }}
+      viewport={{ once: true, amount: 0.15, margin: "-6% 0px" }}
       variants={staggerContainer}
       className={cn(className)}
       {...rest}

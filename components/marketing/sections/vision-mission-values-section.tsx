@@ -5,6 +5,7 @@ import {
   StaggerList,
 } from "@/components/marketing/motion-section"
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
+import { SectionIntro } from "@/components/marketing/section-intro"
 import { sectionBackdropImages, visionMission } from "@/lib/site-content"
 
 export function VisionMissionValuesSection() {
@@ -16,59 +17,52 @@ export function VisionMissionValuesSection() {
       <SectionBackdrop
         src={sectionBackdropImages.vision}
         tone="dark"
-        imageClassName="opacity-[0.24] saturate-[0.68] sm:opacity-[0.3]"
+        imageClassName="opacity-[0.18] saturate-[0.62] sm:opacity-[0.24]"
       />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal direction="right" className="lg:col-span-4">
-            <div className="border-l-4 border-ng-gold pl-5">
-              <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
-                Purpose
-              </p>
-              <h2 className="mt-4 text-3xl leading-tight font-bold tracking-tight text-ng-black sm:text-4xl dark:text-ng-cream">
-                Vision, mission & values
-              </h2>
-            </div>
-            <p className="mt-6 max-w-md text-sm leading-7 text-ng-black/65 sm:text-base dark:text-ng-concrete">
-              Our Vision and Mission guide how Nextgen Apex Global Masters
-              Limited approaches construction, real estate services, and
-              efficient supply chain management.
-            </p>
+            <SectionIntro
+              eyebrow="Purpose"
+              title="Vision, mission & values"
+              description="How we approach construction, real estate, and supply for every client."
+            />
           </Reveal>
 
           <div className="lg:col-span-8">
-            <div className="grid overflow-hidden border border-ng-concrete/25 bg-ng-white/72 shadow-[0_18px_40px_-28px_rgba(15,15,15,0.35)] dark:border-white/10 dark:bg-ng-charcoal/55 dark:shadow-none">
+            <div className="grid overflow-hidden border border-ng-concrete/25 bg-ng-white/80 dark:border-white/10 dark:bg-ng-charcoal/55">
+              <div className="h-1 bg-ng-gold" aria-hidden />
               <Reveal
                 direction="left"
-                className="grid gap-6 border-b border-ng-concrete/20 p-7 sm:grid-cols-[7rem_1fr] sm:p-9 dark:border-white/10"
+                className="grid gap-6 border-b border-ng-concrete/20 p-7 sm:grid-cols-[5rem_1fr] sm:p-9 dark:border-white/10"
               >
                 <div>
-                  <p className="font-heading text-4xl font-bold text-ng-black/35 dark:text-ng-gold">
+                  <p className="font-heading text-3xl font-bold text-ng-black/35 dark:text-ng-gold">
                     01
                   </p>
-                  <h3 className="mt-3 text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
+                  <h3 className="mt-2 text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                     {visionMission.vision.title}
                   </h3>
                 </div>
-                <p className="text-base leading-8 text-ng-black/76 sm:text-lg dark:text-ng-cream/90">
+                <p className="max-w-prose text-base leading-7 text-ng-black/76 sm:text-lg dark:text-ng-cream/90">
                   {visionMission.vision.text}
                 </p>
               </Reveal>
 
               <Reveal
                 direction="left"
-                delay={0.1}
-                className="grid gap-6 p-7 sm:grid-cols-[7rem_1fr] sm:p-9"
+                delay={0.08}
+                className="grid gap-6 p-7 sm:grid-cols-[5rem_1fr] sm:p-9"
               >
                 <div>
-                  <p className="font-heading text-4xl font-bold text-ng-black/35 dark:text-ng-gold">
+                  <p className="font-heading text-3xl font-bold text-ng-black/35 dark:text-ng-gold">
                     02
                   </p>
-                  <h3 className="mt-3 text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
+                  <h3 className="mt-2 text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                     {visionMission.mission.title}
                   </h3>
                 </div>
-                <p className="text-base leading-8 text-ng-black/76 sm:text-lg dark:text-ng-cream/90">
+                <p className="max-w-prose text-base leading-7 text-ng-black/76 sm:text-lg dark:text-ng-cream/90">
                   {visionMission.mission.text}
                 </p>
               </Reveal>
@@ -76,32 +70,26 @@ export function VisionMissionValuesSection() {
           </div>
         </div>
 
-        <Reveal direction="up" delay={0.1} className="mt-14">
-          <div className="flex flex-col justify-between gap-4 border-t border-ng-concrete/25 pt-7 sm:flex-row sm:items-end dark:border-white/10">
-            <div>
-              <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
-                {visionMission.valuesTitle}
-              </p>
-              <h3 className="mt-3 max-w-xl text-2xl font-bold tracking-tight text-ng-black dark:text-ng-cream">
-                The standards that guide every engagement
-              </h3>
-            </div>
-            <p className="max-w-sm text-sm leading-6 text-ng-black/55 dark:text-ng-concrete">
-              Exact principles from the company profile, applied across
-              construction, logistics, sourcing, and client communication.
+        <Reveal direction="up" delay={0.08} className="mt-14">
+          <div className="border-t border-ng-concrete/25 pt-8 dark:border-white/10">
+            <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
+              {visionMission.valuesTitle}
             </p>
+            <h3 className="mt-3 max-w-xl text-2xl font-bold tracking-tight text-ng-black dark:text-ng-cream">
+              Standards on every engagement
+            </h3>
           </div>
 
-          <StaggerList className="mt-8 grid border border-ng-concrete/25 bg-ng-white/60 sm:grid-cols-2 lg:grid-cols-4 dark:border-white/10 dark:bg-ng-charcoal/40">
+          <StaggerList className="mt-8 grid gap-px border border-ng-concrete/25 bg-ng-concrete/25 sm:grid-cols-2 lg:grid-cols-4 dark:border-white/10 dark:bg-white/10">
             {visionMission.values.map((value) => (
               <StaggerItem
                 key={value.title}
-                className="min-h-56 border-b border-ng-concrete/20 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0 dark:border-white/10"
+                className="min-h-48 bg-ng-white/90 p-6 dark:bg-ng-charcoal/90"
               >
-                <p className="text-xs font-bold tracking-[0.14em] text-ng-gold uppercase">
+                <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
                   {value.title}
                 </p>
-                <p className="mt-5 text-sm leading-6 text-ng-black/62 dark:text-ng-concrete">
+                <p className="mt-4 max-w-prose text-sm leading-6 text-ng-black/62 dark:text-ng-concrete">
                   {value.description}
                 </p>
               </StaggerItem>

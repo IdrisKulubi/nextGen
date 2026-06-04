@@ -1,7 +1,10 @@
+import Link from "next/link"
+
+import { FacebookIcon } from "@/components/icons/facebook-icon"
 import { MotionSection, Reveal } from "@/components/marketing/motion-section"
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
+import { SectionIntro } from "@/components/marketing/section-intro"
 import { ContactForm } from "@/components/marketing/contact-form"
-import { ContactOptionsDialog } from "@/components/marketing/contact-options-dialog"
 import {
   contact,
   contactLinks,
@@ -17,23 +20,25 @@ export function ContactSection() {
       <SectionBackdrop src={sectionBackdropImages.contact} tone="dark" />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal direction="up" className="max-w-2xl">
-          <p className="text-xs font-bold tracking-[0.1em] text-ng-gold uppercase">
-            Contact Us
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ng-black sm:text-4xl lg:tracking-[-0.02em] dark:text-ng-cream">
-            {contact.companyLegal}
-          </h2>
-          <p className="mt-4 text-base text-ng-black/65 dark:text-ng-concrete">
-            {contact.email} / {contact.phone}
-          </p>
-          <ContactOptionsDialog className="mt-7 inline-flex h-11 items-center justify-center rounded-lg border border-transparent bg-ng-red px-5 text-sm font-semibold text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50">
-            Contact Us
-          </ContactOptionsDialog>
+          <SectionIntro
+            eyebrow="Contact us"
+            title={contact.companyLegal}
+            description={`${contact.email} · ${contact.phone}`}
+          />
+          <Link
+            href={contactLinks.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-7 inline-flex h-11 items-center justify-center bg-ng-red px-5 text-sm font-semibold text-ng-white transition-colors hover:bg-ng-red-deep"
+          >
+            Chat on WhatsApp
+          </Link>
         </Reveal>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal direction="right" className="lg:col-span-2">
-            <div className="border border-t-2 border-ng-concrete/25 border-t-ng-gold bg-ng-white/85 p-8 shadow-sm dark:bg-ng-charcoal/80 dark:shadow-none">
+            <div className="border border-ng-concrete/25 bg-ng-white/90 p-8 dark:border-white/10 dark:bg-ng-charcoal/80">
+              <div className="mb-6 h-1 w-12 bg-ng-gold" aria-hidden />
               <h3 className="text-lg font-bold text-ng-black dark:text-ng-cream">
                 {contact.companyLegal}
               </h3>
@@ -87,6 +92,15 @@ export function ContactSection() {
                   className="border border-ng-concrete/25 px-4 py-3 text-sm font-semibold text-ng-black transition-colors hover:border-ng-gold/60 hover:bg-ng-gold/10 dark:border-white/10 dark:text-ng-cream"
                 >
                   Send an Email
+                </a>
+                <a
+                  href={contactLinks.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 border border-ng-concrete/25 px-4 py-3 text-sm font-semibold text-ng-black transition-colors hover:border-ng-gold/60 hover:bg-ng-gold/10 dark:border-white/10 dark:text-ng-cream"
+                >
+                  <FacebookIcon className="text-ng-gold" />
+                  Follow on Facebook
                 </a>
               </div>
             </div>

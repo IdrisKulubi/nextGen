@@ -16,6 +16,7 @@ import {
   StaggerList,
 } from "@/components/marketing/motion-section"
 import { SectionBackdrop } from "@/components/marketing/section-backdrop"
+import { SectionIntro } from "@/components/marketing/section-intro"
 import {
   sectionBackdropImages,
   services,
@@ -42,50 +43,44 @@ export function ServicesSection() {
       <SectionBackdrop
         src={sectionBackdropImages.services}
         tone="warm"
-        imageClassName="object-cover object-center opacity-[0.3] saturate-[0.72] sm:opacity-[0.38]"
-        overlayClassName="bg-gradient-to-b from-[#f5f3ef]/76 via-[#f5f3ef]/68 to-[#ebe6dd]/82 dark:from-ng-black/78 dark:via-ng-black/70 dark:to-ng-black/84"
+        imageClassName="object-cover object-center opacity-[0.22] saturate-[0.65] sm:opacity-[0.28]"
+        overlayClassName="bg-gradient-to-b from-[#f5f3ef]/82 via-[#f5f3ef]/74 to-[#ebe6dd]/88 dark:from-ng-black/82 dark:via-ng-black/74 dark:to-ng-black/88"
       />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal direction="right" className="lg:col-span-4">
-            <div className="border-l-4 border-ng-gold pl-5">
-              <p className="text-xs font-bold tracking-[0.12em] text-ng-gold uppercase">
-                What we do
-              </p>
-              <h2 className="mt-4 text-3xl leading-tight font-bold tracking-tight text-ng-black sm:text-4xl dark:text-ng-cream">
-                Product & Services
-              </h2>
-            </div>
-            <p className="mt-6 max-w-md text-sm leading-7 text-ng-black/65 sm:text-base dark:text-ng-concrete">
-              {servicesIntro.text}
-            </p>
+            <SectionIntro
+              eyebrow="What we do"
+              title="Product & Services"
+              description={servicesIntro.text}
+            />
           </Reveal>
 
           <div className="lg:col-span-8">
             <Reveal
               direction="left"
-              className="group relative overflow-hidden border border-ng-concrete/25 bg-ng-white/78 shadow-[0_22px_48px_-30px_rgba(15,15,15,0.45)] dark:border-white/10 dark:bg-ng-charcoal/55 dark:shadow-none"
+              className="border border-ng-concrete/25 bg-ng-white/85 dark:border-white/10 dark:bg-ng-charcoal/55"
             >
-              <div className="absolute inset-y-0 left-0 w-1.5 bg-ng-gold" />
+              <div className="h-1 bg-ng-gold" aria-hidden />
               <div className="grid gap-8 p-7 sm:grid-cols-[1fr_auto] sm:p-9">
                 <div>
-                  <p className="font-heading text-sm font-bold tracking-[0.18em] text-ng-black/55 dark:text-ng-gold">
+                  <p className="font-heading text-sm font-bold tracking-[0.14em] text-ng-black/55 dark:text-ng-gold">
                     01 / {servicesIntro.title}
                   </p>
-                  <h3 className="mt-6 text-2xl font-bold tracking-tight text-ng-black sm:text-3xl dark:text-ng-cream">
+                  <h3 className="mt-5 text-2xl font-bold tracking-tight text-ng-black sm:text-3xl dark:text-ng-cream">
                     {primaryService.title}
                   </h3>
-                  <p className="mt-4 max-w-2xl text-base leading-8 text-ng-black/68 dark:text-ng-concrete">
+                  <p className="mt-4 max-w-prose text-base leading-7 text-ng-black/68 dark:text-ng-concrete">
                     {primaryService.description}
                   </p>
                 </div>
-                <div className="flex size-16 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-gold/70 group-hover:text-ng-gold">
-                  <HardHat className="size-8" weight="duotone" aria-hidden />
+                <div className="flex size-14 items-center justify-center border border-ng-gold/40 text-ng-gold">
+                  <HardHat className="size-7" weight="duotone" aria-hidden />
                 </div>
               </div>
             </Reveal>
 
-            <StaggerList className="mt-6 divide-y divide-ng-concrete/20 border-y border-ng-concrete/25 dark:divide-white/10 dark:border-white/10">
+            <StaggerList className="mt-6 divide-y divide-ng-concrete/20 border border-ng-concrete/25 bg-ng-white/70 dark:divide-white/10 dark:border-white/10 dark:bg-ng-black/20">
               {secondaryServices.map((service, i) => {
                 const iconIndex = i + 1
                 const Icon = icons[iconIndex] ?? HardHat
@@ -93,33 +88,26 @@ export function ServicesSection() {
 
                 return (
                   <StaggerItem key={service.title}>
-                    <article className="group grid gap-5 bg-[#f8f6f1]/70 px-0 py-6 transition-colors hover:bg-ng-white/86 sm:grid-cols-[4.5rem_1fr_auto] sm:items-start sm:px-6 dark:bg-ng-black/20 dark:hover:bg-ng-black/34">
-                      <div className="flex items-center gap-4 sm:block">
-                        <span className="font-heading text-sm font-bold tracking-[0.18em] text-ng-black/45 dark:text-ng-gold">
+                    <article className="grid gap-4 px-5 py-6 transition-colors hover:bg-ng-white sm:grid-cols-[3.5rem_1fr] sm:items-start sm:gap-6 sm:px-7 dark:hover:bg-ng-black/30">
+                      <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2">
+                        <span className="font-heading text-sm font-bold tracking-[0.14em] text-ng-black/45 dark:text-ng-gold">
                           {number}
                         </span>
-                        <div className="flex size-10 items-center justify-center border border-ng-gold/35 text-ng-gold transition-colors group-hover:border-ng-gold/70 group-hover:text-ng-gold sm:mt-4">
-                          <Icon
-                            className="size-5"
-                            weight="duotone"
-                            aria-hidden
-                          />
-                        </div>
+                        <Icon
+                          className="size-6 text-ng-gold sm:mt-1"
+                          weight="duotone"
+                          aria-hidden
+                        />
                       </div>
 
                       <div>
                         <h3 className="text-lg font-bold tracking-tight text-ng-black dark:text-ng-cream">
                           {service.title}
                         </h3>
-                        <p className="mt-2 max-w-2xl text-sm leading-7 text-ng-black/62 dark:text-ng-concrete">
+                        <p className="mt-2 max-w-prose text-sm leading-7 text-ng-black/62 dark:text-ng-concrete">
                           {service.description}
                         </p>
                       </div>
-
-                      <div
-                        className="hidden h-full w-px bg-linear-to-b from-ng-gold via-ng-gold/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100 sm:block"
-                        aria-hidden
-                      />
                     </article>
                   </StaggerItem>
                 )

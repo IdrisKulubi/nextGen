@@ -1,4 +1,4 @@
-import { Geist_Mono, Inter, Space_Grotesk } from "next/font/google"
+import { Geist_Mono, Manrope, Sora } from "next/font/google"
 import type { Metadata } from "next"
 
 import "./globals.css"
@@ -6,12 +6,16 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { Toaster } from "sonner"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-
-const spaceGrotesk = Space_Grotesk({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["500", "600", "700"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+})
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["600", "700", "800"],
 })
 
 const fontMono = Geist_Mono({
@@ -38,14 +42,14 @@ export default function RootLayout({
         "antialiased",
         fontMono.variable,
         "font-sans",
-        inter.variable,
-        spaceGrotesk.variable
+        manrope.variable,
+        sora.variable
       )}
     >
       <body className="min-h-svh bg-background text-foreground">
       <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >

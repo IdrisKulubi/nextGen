@@ -6,9 +6,8 @@ import { List, X } from "@phosphor-icons/react"
 import { Dialog } from "radix-ui"
 
 import { Button } from "@/components/ui/button"
-import { ContactOptionsDialog } from "@/components/marketing/contact-options-dialog"
 import { ModeToggle } from "@/components/theme/mode-toggle"
-import { navLinks } from "@/lib/site-content"
+import { contactLinks, navLinks } from "@/lib/site-content"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
@@ -18,7 +17,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-ng-concrete/20 bg-ng-white/92 backdrop-blur-md supports-backdrop-filter:bg-ng-white/82 dark:border-white/10 dark:bg-ng-surface/90 dark:supports-backdrop-filter:bg-ng-surface/80"
+        "sticky top-0 z-50 border-b border-ng-concrete/20 bg-ng-white dark:border-white/10 dark:bg-ng-surface"
       )}
     >
       <div className="flex h-[4.25rem] w-full items-center justify-between gap-3 px-3 sm:h-[4.75rem] sm:gap-4 sm:px-5 lg:px-8">
@@ -41,24 +40,15 @@ export function SiteHeader() {
           className="hidden min-w-0 flex-1 items-center justify-center gap-4 md:flex lg:gap-6"
           aria-label="Main"
         >
-          {navLinks.map((link) =>
-            link.href === "#contact" ? (
-              <ContactOptionsDialog
-                key={link.href}
-                className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
-              >
-                {link.label}
-              </ContactOptionsDialog>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-xs font-medium text-ng-black/75 transition-colors hover:text-ng-gold lg:text-sm dark:text-ng-cream/85"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:gap-3">
@@ -99,42 +89,50 @@ export function SiteHeader() {
                     </Dialog.Close>
                   </div>
                   <nav className="flex flex-col gap-1" aria-label="Mobile">
-                    {navLinks.map((link) =>
-                      link.href === "#contact" ? (
-                        <ContactOptionsDialog
-                          key={link.href}
-                          className="px-3 py-3 text-left text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
+                    {navLinks.map((link) => (
+                      <Dialog.Close asChild key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
                         >
                           {link.label}
-                        </ContactOptionsDialog>
-                      ) : (
-                        <Dialog.Close asChild key={link.href}>
-                          <Link
-                            href={link.href}
-                            className="px-3 py-3 text-base font-medium text-ng-black/85 transition-colors hover:bg-ng-gold/10 hover:text-ng-gold dark:text-ng-cream/90"
-                          >
-                            {link.label}
-                          </Link>
-                        </Dialog.Close>
-                      )
-                    )}
+                        </Link>
+                      </Dialog.Close>
+                    ))}
                   </nav>
                   <div className="mt-6 border-t border-ng-concrete/25 pt-6 dark:border-white/10">
-                    <ContactOptionsDialog className="inline-flex h-8 w-full shrink-0 items-center justify-center rounded-lg border border-transparent bg-ng-red px-2.5 text-sm font-semibold whitespace-nowrap text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50">
-                      Request a Quote
-                    </ContactOptionsDialog>
+                    <Dialog.Close asChild>
+                      <Link
+                        href={contactLinks.whatsapp}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex h-10 w-full items-center justify-center bg-ng-red px-2.5 text-sm font-semibold text-ng-white transition-colors hover:bg-ng-red-deep"
+                      >
+                        Request a Quote
+                      </Link>
+                    </Dialog.Close>
                   </div>
                 </Dialog.Content>
               </Dialog.Portal>
             </Dialog.Root>
-            <ContactOptionsDialog className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg border border-transparent bg-ng-red px-2.5 text-xs font-semibold whitespace-nowrap text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 sm:px-4 sm:text-sm">
+            <Link
+              href={contactLinks.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-9 shrink-0 items-center justify-center bg-ng-red px-2.5 text-xs font-semibold whitespace-nowrap text-ng-white transition-colors hover:bg-ng-red-deep sm:px-4 sm:text-sm"
+            >
               Request a Quote
-            </ContactOptionsDialog>
+            </Link>
           </div>
 
-          <ContactOptionsDialog className="hidden h-9 shrink-0 items-center justify-center rounded-lg border border-transparent bg-ng-red px-4 text-sm font-semibold whitespace-nowrap text-ng-white transition-all hover:bg-ng-red-deep focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:inline-flex">
+          <Link
+            href={contactLinks.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden h-9 shrink-0 items-center justify-center bg-ng-red px-4 text-sm font-semibold whitespace-nowrap text-ng-white transition-colors hover:bg-ng-red-deep md:inline-flex"
+          >
             Request a Quote
-          </ContactOptionsDialog>
+          </Link>
         </div>
       </div>
     </header>

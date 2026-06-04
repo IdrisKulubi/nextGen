@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import { FacebookIcon } from "@/components/icons/facebook-icon"
 import {
   COMPANY_NAME,
   contact,
@@ -83,6 +84,17 @@ export function SiteFooter() {
             </p>
             <p className="mt-1 text-ng-black/60 dark:text-ng-concrete">
               {contact.address}
+            </p>
+            <p className="mt-4">
+              <a
+                href={contact.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 font-semibold text-ng-gold hover:text-ng-gold/80"
+              >
+                <FacebookIcon />
+                Follow on Facebook
+              </a>
             </p>
           </address>
         </div>

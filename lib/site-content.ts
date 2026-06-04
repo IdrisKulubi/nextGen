@@ -157,16 +157,19 @@ export const whyChooseUs = {
 
 export const contact = {
   companyLegal: "NEXTGEN APEX GLOBAL MASTERS",
-  email: "INFO.NEXTGENAPEX254@GMAIL.COM",
+  email: "info@nextgeninfra.co.ke",
   phone: "+254720856826",
   whatsapp: "+254720856826",
   address: "P.O BOX 304, 10205 - MARAGUA",
+  /** Business Facebook page (share link from client). */
+  facebook: "https://www.facebook.com/share/18qBrvUAGJ/",
   formCta: "Talk to NextGen Today",
 } as const
 
 export const contactLinks = {
   email: `mailto:${contact.email}?subject=${encodeURIComponent("Quote request - NextGen Apex Global Masters")}`,
   whatsapp: `https://wa.me/${contact.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hello NextGen Apex Global Masters, I would like to request a quote.")}`,
+  facebook: contact.facebook,
 } as const
 
 export const serviceInterestOptions = [
