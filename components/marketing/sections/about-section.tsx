@@ -35,11 +35,6 @@ export function AboutSection() {
               "shadow-[0_20px_40px_-24px_rgba(15,15,15,0.2)] dark:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.55)]"
             )}
           >
-            <div
-              className="h-1 w-full bg-ng-gold"
-              aria-hidden
-            />
-
             <div className="relative space-y-8 p-8 sm:p-9 lg:p-10">
               <p className="max-w-prose text-base leading-relaxed text-ng-black/78 sm:text-lg dark:text-ng-cream/88">
                 {about.body}

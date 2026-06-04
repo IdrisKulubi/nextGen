@@ -61,7 +61,6 @@ export function ServicesSection() {
               direction="left"
               className="border border-ng-concrete/25 bg-ng-white/85 dark:border-white/10 dark:bg-ng-charcoal/55"
             >
-              <div className="h-1 bg-ng-gold" aria-hidden />
               <div className="grid gap-8 p-7 sm:grid-cols-[1fr_auto] sm:p-9">
                 <div>
                   <p className="font-heading text-sm font-bold tracking-[0.14em] text-ng-black/55 dark:text-ng-gold">

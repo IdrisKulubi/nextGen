@@ -38,7 +38,6 @@ export function ContactSection() {
         <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal direction="right" className="lg:col-span-2">
             <div className="border border-ng-concrete/25 bg-ng-white/90 p-8 dark:border-white/10 dark:bg-ng-charcoal/80">
-              <div className="mb-6 h-1 w-12 bg-ng-gold" aria-hidden />
               <h3 className="text-lg font-bold text-ng-black dark:text-ng-cream">
                 {contact.companyLegal}
               </h3>

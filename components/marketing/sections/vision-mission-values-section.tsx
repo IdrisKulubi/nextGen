@@ -31,7 +31,6 @@ export function VisionMissionValuesSection() {
 
           <div className="lg:col-span-8">
             <div className="grid overflow-hidden border border-ng-concrete/25 bg-ng-white/80 dark:border-white/10 dark:bg-ng-charcoal/55">
-              <div className="h-1 bg-ng-gold" aria-hidden />
               <Reveal
                 direction="left"
                 className="grid gap-6 border-b border-ng-concrete/20 p-7 sm:grid-cols-[5rem_1fr] sm:p-9 dark:border-white/10"

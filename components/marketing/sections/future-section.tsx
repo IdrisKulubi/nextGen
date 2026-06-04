@@ -19,8 +19,7 @@ export function FutureSection() {
           direction="up"
           className="border border-ng-concrete/25 bg-ng-white/80 p-7 sm:p-10 dark:border-white/10 dark:bg-ng-black/28"
         >
-          <div className="h-1 w-full max-w-24 bg-ng-gold" aria-hidden />
-          <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-12">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-12">
             <SectionIntro
               eyebrow={future.eyebrow}
               title={future.title}
